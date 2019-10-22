@@ -110,14 +110,14 @@ export default {
     },
     previousStep () {
       if (this.currentStep > 0) {
-        this.customCallbacks.onPreviousStep(this.currentStep)
         this.currentStep--
+        this.customCallbacks.onPreviousStep(this.currentStep + 1)
       }
     },
     nextStep () {
       if (this.currentStep < this.numberOfSteps - 1 && this.currentStep !== -1) {
-        this.customCallbacks.onNextStep(this.currentStep)
         this.currentStep++
+        this.customCallbacks.onNextStep(this.currentStep - 1)
       }
     },
     stop () {
